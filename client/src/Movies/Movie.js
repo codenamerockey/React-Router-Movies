@@ -3,10 +3,9 @@ import axios from "axios";
 
 const Movie = props => {
   const [movie, setMovie] = useState({});
+  const id = props.match.params.id;
 
   useEffect(() => {
-    const id = props.match.params.id;
-
     console.log(props);
     // console.log(movieId);
     // change ^^^ that line and grab the id from the URL
@@ -20,7 +19,7 @@ const Movie = props => {
       .catch(error => {
         console.error(error);
       });
-  }, []);
+  }, [id]);
 
   // Uncomment this only when you have moved on to the stretch goals
   // const saveMovie = () => {
